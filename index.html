@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>URL Encoder / Decoder - 免费在线工具</title>
+<meta name="description" content="在线 URL 编解码工具 - URL编码/解码，参数解析">
+<style>*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-height:100vh;display:flex;flex-direction:column}
+header{background:#161b22;border-bottom:1px solid #30363d;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:18px;font-weight:700;color:#58a6ff}
+.logo span{color:#f0c040}
+header .badge{font-size:10px;background:#daa520;color:#fff;padding:2px 8px;border-radius:10px;margin-left:8px}
+main{max-width:700px;margin:0 auto;padding:32px 24px;flex:1}
+.tool-wrapper{padding:20px 0}
+footer{padding:16px 24px;border-top:1px solid #21262d;text-align:center;font-size:12px;color:#484f58}
+footer a{color:#58a6ff;text-decoration:none;margin:0 8px}
+.btn-primary:hover{background:#2ea043!important}
+.btn:hover{background:#30363d!important}
+input:focus,textarea:focus,select:focus{outline:none;border-color:#58a6ff!important}
+.btn{font-family:inherit}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">🛠 <span>Dev</span>Kit<span class="badge">BETA</span></div>
+  <div style="font-size:11px;color:#8b949e">🔒 本地处理 · 数据不上传</div>
+</header>
+<main>
+  <h1 style="font-size:24px;margin-bottom:4px">URL Encoder / Decoder</h1>
+  <p style="color:#8b949e;font-size:14px;margin-bottom:8px">在线 URL 编解码工具 - URL编码/解码，参数解析</p>
+<div class="tool-wrapper">
+  <div style="display:flex;gap:4px;margin-bottom:12px">
+    <button class="tab-btn active" onclick="switchTab('encode')" id="tab-encode" style="flex:1;padding:10px;border:1px solid #58a6ff;border-radius:6px 6px 0 0;background:#1a2230;color:#58a6ff;cursor:pointer;font-size:13px;font-weight:600">🔒 URL编码</button>
+    <button class="tab-btn" onclick="switchTab('decode')" id="tab-decode" style="flex:1;padding:10px;border:1px solid #30363d;border-radius:6px 6px 0 0;background:#161b22;color:#8b949e;cursor:pointer;font-size:13px;font-weight:600">🔓 URL解码</button>
+    <button class="tab-btn" onclick="switchTab('params')" id="tab-params" style="flex:1;padding:10px;border:1px solid #30363d;border-radius:6px 6px 0 0;background:#161b22;color:#8b949e;cursor:pointer;font-size:13px;font-weight:600">🔍 参数解析</button>
+  </div>
+  <textarea id="url-input" placeholder="输入 URL 或文本..." rows="6" style="width:100%;padding:16px;font-size:14px;border:1px solid #30363d;border-radius:0 0 8px 8px;background:#0d1117;color:#c9d1d9;resize:vertical;outline:none;font-family:mono;line-height:1.6"></textarea>
+  <div style="display:flex;gap:8px;margin:12px 0">
+    <button class="btn btn-primary" style="flex:1;padding:10px;background:#238636;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600" onclick="processURL()">处理</button>
+    <button class="btn" style="padding:10px 20px;background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:8px;cursor:pointer;font-size:13px" onclick="copyURL()">📋 复制</button>
+  </div>
+  <div id="url-output" style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;font-family:mono;font-size:13px;line-height:1.8;min-height:120px;white-space:pre-wrap;word-break:break-all;color:#c9d1d9"></div>
+</div>
+</main>
+<footer>
+  <a href="https://github.com/479464887-rgb/url-tool">GitHub</a>
+  <span>·</span>
+  <span>© 2026 DevKit</span>
+</footer>
+<script>let mode='encode';
+function switchTab(m){mode=m;document.querySelectorAll('.tab-btn').forEach(b=>{b.style.borderColor='#30363d';b.style.background='#161b22';b.style.color='#8b949e';b.classList.remove('active')});const t=document.getElementById('tab-'+m);t.style.borderColor='#58a6ff';t.style.background='#1a2230';t.style.color='#58a6ff';t.classList.add('active');}
+function processURL(){
+  const inp=document.getElementById('url-input').value.trim();if(!inp)return;
+  if(mode==='encode'){document.getElementById('url-output').textContent=encodeURIComponent(inp)}
+  else if(mode==='decode'){document.getElementById('url-output').textContent=decodeURIComponent(inp)}
+  else{try{const u=new URL(inp.startsWith('http')?inp:'https://'+inp);let r=`协议: ${u.protocol}\n主机: ${u.hostname}\n端口: ${u.port||'(默认)'}\n路径: ${u.pathname}\n\n查询参数:\n`;u.searchParams.forEach((v,k)=>{r+=`  ${k} = ${v}\n`});r+=`\nHash: ${u.hash||'(无)'}`;document.getElementById('url-output').textContent=r}catch(e){document.getElementById('url-output').textContent='❌ 无效URL: '+e.message}}
+}
+function copyURL(){const v=document.getElementById('url-output').textContent;if(!v)return;navigator.clipboard.writeText(v);}
+</script>
+</body>
+</html>
