@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>URL Encoder / Decoder - 免费在线工具</title>
-<meta name="description" content="在线 URL 编解码工具 - URL编码/解码，参数解析">
+<title>URL Encoder / Decoder - 免费Online Tools</title>
+<meta name="description" content="在线 URL 编Decode工具 - URLEncode/Decode，参数解析">
 <style>*{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-height:100vh;display:flex;flex-direction:column}
 header{background:#161b22;border-bottom:1px solid #30363d;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
@@ -24,21 +24,21 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:#58a6ff!import
 <body>
 <header>
   <div class="logo">🛠 <span>Dev</span>Kit<span class="badge">BETA</span></div>
-  <div style="font-size:11px;color:#8b949e">🔒 本地处理 · 数据不上传</div>
+  <div style="font-size:11px;color:#8b949e">🔒 Processed locally · 数据不Upload</div>
 </header>
 <main>
   <h1 style="font-size:24px;margin-bottom:4px">URL Encoder / Decoder</h1>
-  <p style="color:#8b949e;font-size:14px;margin-bottom:8px">在线 URL 编解码工具 - URL编码/解码，参数解析</p>
+  <p style="color:#8b949e;font-size:14px;margin-bottom:8px">在线 URL 编Decode工具 - URLEncode/Decode，参数解析</p>
 <div class="tool-wrapper">
   <div style="display:flex;gap:4px;margin-bottom:12px">
-    <button class="tab-btn active" onclick="switchTab('encode')" id="tab-encode" style="flex:1;padding:10px;border:1px solid #58a6ff;border-radius:6px 6px 0 0;background:#1a2230;color:#58a6ff;cursor:pointer;font-size:13px;font-weight:600">🔒 URL编码</button>
-    <button class="tab-btn" onclick="switchTab('decode')" id="tab-decode" style="flex:1;padding:10px;border:1px solid #30363d;border-radius:6px 6px 0 0;background:#161b22;color:#8b949e;cursor:pointer;font-size:13px;font-weight:600">🔓 URL解码</button>
+    <button class="tab-btn active" onclick="switchTab('encode')" id="tab-encode" style="flex:1;padding:10px;border:1px solid #58a6ff;border-radius:6px 6px 0 0;background:#1a2230;color:#58a6ff;cursor:pointer;font-size:13px;font-weight:600">🔒 URLEncode</button>
+    <button class="tab-btn" onclick="switchTab('decode')" id="tab-decode" style="flex:1;padding:10px;border:1px solid #30363d;border-radius:6px 6px 0 0;background:#161b22;color:#8b949e;cursor:pointer;font-size:13px;font-weight:600">🔓 URLDecode</button>
     <button class="tab-btn" onclick="switchTab('params')" id="tab-params" style="flex:1;padding:10px;border:1px solid #30363d;border-radius:6px 6px 0 0;background:#161b22;color:#8b949e;cursor:pointer;font-size:13px;font-weight:600">🔍 参数解析</button>
   </div>
-  <textarea id="url-input" placeholder="输入 URL 或文本..." rows="6" style="width:100%;padding:16px;font-size:14px;border:1px solid #30363d;border-radius:0 0 8px 8px;background:#0d1117;color:#c9d1d9;resize:vertical;outline:none;font-family:mono;line-height:1.6"></textarea>
+  <textarea id="url-input" placeholder="Input URL 或文本..." rows="6" style="width:100%;padding:16px;font-size:14px;border:1px solid #30363d;border-radius:0 0 8px 8px;background:#0d1117;color:#c9d1d9;resize:vertical;outline:none;font-family:mono;line-height:1.6"></textarea>
   <div style="display:flex;gap:8px;margin:12px 0">
     <button class="btn btn-primary" style="flex:1;padding:10px;background:#238636;color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600" onclick="processURL()">处理</button>
-    <button class="btn" style="padding:10px 20px;background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:8px;cursor:pointer;font-size:13px" onclick="copyURL()">📋 复制</button>
+    <button class="btn" style="padding:10px 20px;background:#21262d;color:#c9d1d9;border:1px solid #30363d;border-radius:8px;cursor:pointer;font-size:13px" onclick="copyURL()">📋 Copy</button>
   </div>
   <div id="url-output" style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;font-family:mono;font-size:13px;line-height:1.8;min-height:120px;white-space:pre-wrap;word-break:break-all;color:#c9d1d9"></div>
 </div>
