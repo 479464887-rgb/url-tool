@@ -10,7 +10,14 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠</text></svg>">
 
 <meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠</text></svg>">
+<meta name="theme-color" content="#0d1117">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta property="og:title" content="URL Encoder / Decoder - 免费Online Tools — DevKit Tools">
+<meta property="og:description" content="在线 URL 编Decode工具 - URLEncode/Decode，参数解析">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://479464887-rgb.github.io/url-tool/">
+<meta name="twitter:card" content="summary_large_image">
 <title>URL Encoder / Decoder - 免费Online Tools</title>
 <meta name="description" content="在线 URL 编Decode工具 - URLEncode/Decode，参数解析">
 <style>*{margin:0;padding:0;box-sizing:border-box}
@@ -28,6 +35,9 @@ footer a{color:#58a6ff;text-decoration:none;margin:0 8px}
 input:focus,textarea:focus,select:focus{outline:none;border-color:#58a6ff!important}
 .btn{font-family:inherit}
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"URL Encoder / Decoder - 免费Online Tools","description":"在线 URL 编Decode工具 - URLEncode/Decode，参数解析","url":"https://479464887-rgb.github.io/url-tool/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
 </head>
 <body>
 <header>
@@ -56,7 +66,9 @@ input:focus,textarea:focus,select:focus{outline:none;border-color:#58a6ff!import
   <span>·</span>
   <span>© 2026 DevKit</span>
 </footer>
-<script>let mode='encode';
+<script>
+'use strict';
+let mode='encode';
 function switchTab(m){mode=m;document.querySelectorAll('.tab-btn').forEach(b=>{b.style.borderColor='#30363d';b.style.background='#161b22';b.style.color='#8b949e';b.classList.remove('active')});const t=document.getElementById('tab-'+m);t.style.borderColor='#58a6ff';t.style.background='#1a2230';t.style.color='#58a6ff';t.classList.add('active');}
 function processURL(){
   const inp=document.getElementById('url-input').value.trim();if(!inp)return;
